@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{973EED55-6E0C-4C39-8C32-2DB3A139082F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectClasses</RootNamespace>
+    <AssemblyName>ProjectClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccessLayer\DBMediatorProductStatistics.cs" />
+    <Compile Include="Enum\DatabaseType.cs" />
+    <Compile Include="Exceptions\NotEnoughEmmployeesException.cs" />
+    <Compile Include="Exceptions\AssignDMDepartmentException.cs" />
+    <Compile Include="LogicLayer\AssignDepartmentManagerDepartment.cs" />
+    <Compile Include="LogicLayer\AssignStoreWorkerDepartment.cs" />
+    <Compile Include="DataAccessLayer\DBMediator.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorContractHistory.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorDepartment.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorEmployee.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorEmpStatistic.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorHoliday.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorProduct.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorRestockRequest.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorShifts.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorSoldProduct.cs" />
+    <Compile Include="DataAccessLayer\DBMediatorAssignPersonDepartment.cs" />
+    <Compile Include="LogicLayer\AssignPersonDepartment.cs" />
+    <Compile Include="LogicLayer\AssignPersonDepartmentManager.cs" />
+    <Compile Include="Enum\ContractType.cs" />
+    <Compile Include="Enum\EmployeeType.cs" />
+    <Compile Include="Enum\Gender.cs" />
+    <Compile Include="Enum\PaymentType.cs" />
+    <Compile Include="Enum\ShiftType.cs" />
+    <Compile Include="Exceptions\ExistingHolidayException.cs" />
+    <Compile Include="Exceptions\IncorrectPricingException.cs" />
+    <Compile Include="Exceptions\RepeatingObjectException.cs" />
+    <Compile Include="LogicLayer\EmployeeInSchedule.cs" />
+    <Compile Include="LogicLayer\Holiday.cs" />
+    <Compile Include="LogicLayer\HolidayManager.cs" />
+    <Compile Include="Exceptions\NotExistingHolidayException.cs" />
+    <Compile Include="LogicLayer\ProductStatisticsManager.cs" />
+    <Compile Include="LogicLayer\RestockRequestManager.cs" />
+    <Compile Include="LogicLayer\SoldProduct.cs" />
+    <Compile Include="LogicLayer\BasketManager.cs" />
+    <Compile Include="LogicLayer\ContractHistory.cs" />
+    <Compile Include="LogicLayer\ContractHistoryManager.cs" />
+    <Compile Include="LogicLayer\Department.cs" />
+    <Compile Include="LogicLayer\DepartmentManager.cs" />
+    <Compile Include="LogicLayer\Employee.cs" />
+    <Compile Include="LogicLayer\EmployeeManager.cs" />
+    <Compile Include="LogicLayer\EmpStatisticManager.cs" />
+    <Compile Include="LogicLayer\Product.cs" />
+    <Compile Include="LogicLayer\ProductManager.cs" />
+    <Compile Include="LogicLayer\Shift.cs" />
+    <Compile Include="LogicLayer\ShiftManager.cs" />
+    <Compile Include="LogicLayer\WeekSchedule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

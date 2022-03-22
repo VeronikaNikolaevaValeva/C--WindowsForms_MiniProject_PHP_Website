@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E420DF1E-2FDD-4A33-B29D-53B78C2E78AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MediaBazaar</RootNamespace>
+    <AssemblyName>MediaBazaar</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Lenovo\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E6FF912CEE90C159ED795FD2ECF8EF83CE9D711F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MediaBazaar_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AssignProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssignProductForm.Designer.cs">
+      <DependentUpon>AssignProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssignSubCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssignSubCategoryForm.Designer.cs">
+      <DependentUpon>AssignSubCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssignCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssignCategoryForm.Designer.cs">
+      <DependentUpon>AssignCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepartmentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepartmentDetailsForm.Designer.cs">
+      <DependentUpon>DepartmentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AssignDepartmentManagerToDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AssignDepartmentManagerToDepartment.Designer.cs">
+      <DependentUpon>AssignDepartmentManagerToDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AssignStoreWorkerToDepartmentUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AssignStoreWorkerToDepartmentUC.Designer.cs">
+      <DependentUpon>AssignStoreWorkerToDepartmentUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditEmployeeForm.Designer.cs">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyDepartment.Designer.cs">
+      <DependentUpon>ModifyDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StoreWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StoreWorkerForm.Designer.cs">
+      <DependentUpon>StoreWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DepartmentManagerEmployeeStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DepartmentManagerEmployeeStatistics.Designer.cs">
+      <DependentUpon>DepartmentManagerEmployeeStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UnAssignDepartmentManagerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UnAssignDepartmentManagerUC.Designer.cs">
+      <DependentUpon>UnAssignDepartmentManagerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DepartmentUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DepartmentUC.Designer.cs">
+      <DependentUpon>DepartmentUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeFullInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeFullInfoForm.Designer.cs">
+      <DependentUpon>EmployeeFullInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductInfoForm.Designer.cs">
+      <DependentUpon>ProductInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HolidayRequestsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HolidayRequestsUC.Designer.cs">
+      <DependentUpon>HolidayRequestsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RestockRequestUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RestockRequestUC.Designer.cs">
+      <DependentUpon>RestockRequestUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddProductUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddProductUC.Designer.cs">
+      <DependentUpon>AddProductUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeEmployeeWorkingContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeEmployeeWorkingContractForm.Designer.cs">
+      <DependentUpon>ChangeEmployeeWorkingContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepartmentManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepartmentManagerForm.Designer.cs">
+      <DependentUpon>DepartmentManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmployeeStatisticUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EmployeeStatisticUC.Designer.cs">
+      <DependentUpon>EmployeeStatisticUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HRAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HRAdminForm.Designer.cs">
+      <DependentUpon>HRAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StockManagerSupplierRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StockManagerSupplierRequest.Designer.cs">
+      <DependentUpon>StockManagerSupplierRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StoreWorkerRestockRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StoreWorkerRestockRequest.Designer.cs">
+      <DependentUpon>StoreWorkerRestockRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserProfileUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserProfileUC.Designer.cs">
+      <DependentUpon>UserProfileUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ManageEmployeeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageEmployeeUC.Designer.cs">
+      <DependentUpon>ManageEmployeeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductDataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductDataUC.Designer.cs">
+      <DependentUpon>ProductDataUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductStatisticUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductStatisticUC.Designer.cs">
+      <DependentUpon>ProductStatisticUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\StockManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockManagerForm.Designer.cs">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockWorkerForm.Designer.cs">
+      <DependentUpon>StockWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StoreManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StoreManagerForm.Designer.cs">
+      <DependentUpon>StoreManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StockWorkerScheduleUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StockWorkerScheduleUC.Designer.cs">
+      <DependentUpon>StockWorkerScheduleUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StoreWorkerScheduleUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StoreWorkerScheduleUC.Designer.cs">
+      <DependentUpon>StoreWorkerScheduleUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AssignProductForm.resx">
+      <DependentUpon>AssignProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignSubCategoryForm.resx">
+      <DependentUpon>AssignSubCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignCategoryForm.resx">
+      <DependentUpon>AssignCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepartmentDetailsForm.resx">
+      <DependentUpon>DepartmentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AssignDepartmentManagerToDepartment.resx">
+      <DependentUpon>AssignDepartmentManagerToDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AssignStoreWorkerToDepartmentUC.resx">
+      <DependentUpon>AssignStoreWorkerToDepartmentUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditEmployeeForm.resx">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyDepartment.resx">
+      <DependentUpon>ModifyDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StoreWorkerForm.resx">
+      <DependentUpon>StoreWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DepartmentManagerEmployeeStatistics.resx">
+      <DependentUpon>DepartmentManagerEmployeeStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UnAssignDepartmentManagerUC.resx">
+      <DependentUpon>UnAssignDepartmentManagerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DepartmentUC.resx">
+      <DependentUpon>DepartmentUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeFullInfoForm.resx">
+      <DependentUpon>EmployeeFullInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductInfoForm.resx">
+      <DependentUpon>ProductInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\HolidayRequestsUC.resx">
+      <DependentUpon>HolidayRequestsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RestockRequestUC.resx">
+      <DependentUpon>RestockRequestUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AddProductUC.resx">
+      <DependentUpon>AddProductUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeEmployeeWorkingContractForm.resx">
+      <DependentUpon>ChangeEmployeeWorkingContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepartmentManagerForm.resx">
+      <DependentUpon>DepartmentManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EmployeeStatisticUC.resx">
+      <DependentUpon>EmployeeStatisticUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HRAdminForm.resx">
+      <DependentUpon>HRAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StockManagerSupplierRequest.resx">
+      <DependentUpon>StockManagerSupplierRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StoreWorkerRestockRequest.resx">
+      <DependentUpon>StoreWorkerRestockRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserProfileUC.resx">
+      <DependentUpon>UserProfileUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ManageEmployeeUC.resx">
+      <DependentUpon>ManageEmployeeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductDataUC.resx">
+      <DependentUpon>ProductDataUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductStatisticUC.resx">
+      <DependentUpon>ProductStatisticUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\StockManagerForm.resx">
+      <DependentUpon>StockManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockWorkerForm.resx">
+      <DependentUpon>StockWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StoreManagerForm.resx">
+      <DependentUpon>StoreManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StockWorkerScheduleUC.resx">
+      <DependentUpon>StockWorkerScheduleUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StoreWorkerScheduleUC.resx">
+      <DependentUpon>StoreWorkerScheduleUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectClasses\ProjectClasses.csproj">
+      <Project>{973eed55-6e0c-4c39-8c32-2db3a139082f}</Project>
+      <Name>ProjectClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

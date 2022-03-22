@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>615</x>
+      <y>105</y>
+      <w>420</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Employee
+--
+-id : int 
+-bsn : string 
+-firstName : string 
+-lastName : string 
+-gender : Gender
+-email : string 
+-username : string 
+-password : string 
+-birthDay : DateTime 
+-addrStreet : string 
+-addrStreetNumber : string 
+-addrZipcode : string 
+-addrTown : string 
+-addrCountry : string 
+-firstWorkingDay : DateTime 
+-emergencyPhoneNumber : string
+-iban : string
+-hourlyWage : double
+//-contractStartDatе : DateTime 
+-contract : ContractType
+-position : EmployeeType
+//Department
+//Level
+//Photo
+//Availability
+//FTE
+//contractStartDate: DateTime
+//-contractHistory: list&lt;ContractType&gt;
+--
++Employee(id : int, bsn: int, firstName: string, lastName : string, gender : Gender, email : string, username: string, password: string,
+         birthDay : DateTime, addrStreet : string, addrStreetNumber : string, addrZipcode : string, addrTown : string, addrCountry : string, firstWorkingDay : DateTime,
+         emergencyPhoneNumber: string, iban : string, hourlyWage : double, contract : ContractType, position : EmployeeType)
++GetEmployeeNames : string
++GetInfo : string
++EmployeeFullInfo : string
++GetAddress() : string
++ToString() : string
+
+//+ChangePassword(oldPass:string, newPass: string): bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1095</x>
+      <y>320</y>
+      <w>80</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Gender
+--
+MALE,
+FEMALE,
+OTHER</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1150</x>
+      <y>475</y>
+      <w>80</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+ShiftType
+--
+Morning,
+Afternoon,
+Evening,
+Night</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1095</x>
+      <y>505</y>
+      <w>65</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>490</y>
+      <w>315</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>Schedule
+--
+
+--
++Schedule()
+-GetStoreWorkers(query : string, shift : ShiftType, date : string) : List&lt;Employee&gt;
+-AddShift(shift : ShiftType, date : string) : Shift
++GetShift(shift : ShiftType, date : string) : Shift
++AssignEmployeeToShift(shift : Shift, bsn : string) : Employee
++RemoveEmployeeFromShift(shift : Shift, bsn : string) : Employee
++GetEmployeesAssignedHours(employees : List&lt;int&gt;, date : string) : Dictionary&lt;int, int&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>215</x>
+      <y>15</y>
+      <w>320</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>SystemManager
+--
+
+--
++SystemManager()
++AddEmployeeToDb(bsn : string, firstName : string, lastName string, gender : Gender, email : string,
+            username : string, birthDay : DateTime, addrStreet : string, addrStreetNumber string,
+            addrZipcode : string, addrTown : string, addrCountry : string ,
+            firstWorkingDay : DateTime, emergencyPhoneNumber : string, iban : string,
+            hourlyWage : double, contract : ContractType, position : EmployeeType ) : bool
+//+GetEmployees() : List&lt;Employee&gt;
+//+GetEmployeeCount() : int
+//+FindEmployee(id : int) : Employee
+//+CheckPassword(password : string) : bool
++ChangePassword(password : string, id : int) : bool
++DeleteEmployeeFromDb(id : int) : bool
+//+CheckLoginInfo(username : string, password : string) : int
++GetListOfAllEmployees() : List&lt;Employees&gt;
++Login(username : string, password : string) : Employee
+//+ChangeWorkContract(contract : ContractType, id : int) : bool
+//+UpdateEmployees() : void
++GetAllProducts() : List&lt;Product&gt;
++AddProductToDB(brand : string, type : string, model : string, description : string,
+               category :  string, subcategory : string, costPrice :  decimal,
+               salePrice :  decimal, amountInStore :  int, amountInWarehouse : int) : bool
++DeleteAProduct(id : int) : bool
+//+RemoveEmployee(employeeID : int) : bool
++GetEmployees() : List&lt;Employee&gt;
++FindEmployee(bsn : int) : Employee
++CheckPassword(password: string) : bool
++CheckLoginInfo(username : string, password : string) : bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>530</x>
+      <y>40</y>
+      <w>95</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>170.0;430.0;120.0;430.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1095</x>
+      <y>220</y>
+      <w>95</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+EmployeeType
+--
+STORE WORKER,
+STOCK WORKER,
+DEPARTMENT MENAGER,
+STORE MANAGER,
+STOCK MANAGER,
+HR</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>160</y>
+      <w>75</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>240</y>
+      <w>75</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1095</x>
+      <y>150</y>
+      <w>80</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+ContractType
+--
+FULLTIME,
+EIGHTYPERCENT,
+FLEX,
+LEFT</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>320</y>
+      <w>75</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>275</x>
+      <y>255</y>
+      <w>310</w>
+      <h>255</h>
+    </coordinates>
+    <panel_attributes>DatabaseMediator
+--
+-dbConnection : MySqlConnection
+--
++DatabaseMediator()
++GetEmpCount() : int
++FindMatchingLoginInfo(username : string, password : string) : Employee
++GetEmployees() : List&lt;Employee&gt;
++AddEmployee(bsn : string, firstName : string, lastName : string, gender : Gender,
+            email : string, username : string, birthDay : DateTime,
+            addrStreet : string, addrStreetNumber : string, addrZipcode : string,
+            addrTown : string, addrCountry : string, firstWorkingDay : DateTime,
+            emergencyPhoneNumber : string, iban : string, hourlyWage : double,
+            contract : ContractType, position : EmployeeType ) : bool
++DeleteEmployee(id : int) : bool
++ChangeWorkContract(contract : ContractType, id : int) : bool
++ChangePassword(password : string, id : int) : bool
++GetProducts() : List&lt;Product&gt;
++AddProduct(brand : string, type : string, model : string, description : string,
+           category : string, subcategory : string, costPrice :  decimal,
+           salePrice :  decimal, amountInStore : int, amountInWarehouse : int) : bool
++DeleteProduct(id : int) : bool
++GetEmployeesAssignedHoursForStatPerDay(employees : List&lt;int&gt;, date : string) : List&lt;int&gt;
++GetEmployeesAssignedHoursForStatPerWeek(employees : List&lt;int&gt;, date : string) : List&lt;int&gt;
++GetEmployeesAssignedHoursForStatPerMonth(employees : List&lt;int&gt;, month : string) : List&lt;int&gt;
++GetEmployeesAssignedHoursForStatPerYear(employees : List&lt;int&gt;, year : string) : List&lt;int&gt;
+-sqlExeptionMessage(originalExceptionMessage : string) : string
++GetDBConnection() : MySqlConnection
++OpenExecuteReader(sqlReaderCommand : MySqlCommand) : MySqlDataReader
++CloseExecuteReader(reader : MySqlDataReader) : void
++ExecuteNonQuery(sqlNonQueryCommand : MySqlCommand) : int
++ExecuteScalar(sqlCommand : MySqlCommand) : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>200</y>
+      <w>25</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5</x>
+      <y>270</y>
+      <w>220</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>Product
+--
+-pNumber : int
+-brand : string
+-type : string 
+-model : string 
+-description : string
+-category : string
+-subcategory : string 
+-costPrice : decimal
+-salePrice : decimal
+-amountInStore : int
+-amountInWarehouse : int
+--
++Product(pNumber : int, brand : string, type : string, model : string,
+            description : string, category : string, subcategory : string,
+            costPrice : decimal, salePrice : decimal, amountInStore : int,
+            amountInWarehouse : int)
++GetStatistic(quantity : int) : string
++ToString() : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>490</y>
+      <w>180</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>Shift
+--
+-id : int
+-type : ShiftType
+-date : DateTime
+--
++Shift(id : int, shiftType : ShiftType, date : DateTime,
+      assignedEmployees : List&lt;Employee&gt;,
+      availableEmployees : List&lt;Employee&gt;)
++GetAssignedEmployees() : List&lt;Employee&gt;
++GetAvailableEmployees() : List&lt;Employee&gt;
++GetAvailableEmployeesIds() : List&lt;int&gt;
+-FindEmployee(bsn : string, 
+             listOfEmployees : List&lt;Employee&gt;) : Employee
++AssignEmployee(bsn : string) : Employee
++RemoveEmployee(bsn : string) : Employee
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>360</y>
+      <w>25</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= 0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>360</y>
+      <w>25</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>405</y>
+      <w>85</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= 0...1</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0;150.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>105</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>Form
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>20</y>
+      <w>125</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1020</x>
+      <y>520</y>
+      <w>50</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>-
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>680</x>
+      <y>415</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-assignedEmployees
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>770</x>
+      <y>415</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-availableEmployees
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>600</x>
+      <y>395</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-DBMediator
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>545</x>
+      <y>30</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-employees
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>345</x>
+      <y>215</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-dbMediator
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>115</x>
+      <y>10</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-systemManager
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>360</y>
+      <w>25</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1= 0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>925</x>
+      <y>415</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-assignedEmployees
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>360</y>
+      <w>25</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1000</x>
+      <y>415</y>
+      <w>85</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>-availableEmployees
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
