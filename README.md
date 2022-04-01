@@ -1,5 +1,6 @@
-# S-CB-S2-CMK - Group 4;
+# Website;
 Website Url:  http://i467491.hera.fhict.nl/LogInPage.php;
+- Stock Worker      : uName-'Jeff001'      pass-'0000';
 
 **Mediabazaar main application**;
 Login credentials:;
